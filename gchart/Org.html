@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["orgchart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Name');
+        data.addColumn('string', 'Manager');
+        data.addColumn('string', 'ToolTip');
+
+        data.addRows([
+          [{v:'001', f:'MCS'}, '', 'Top'],
+          [{v:'100', f:'<a href="Notes://MCSNOTES03/49257D09001F654A/">管理本部</a>'}, '001', 'ss'],
+          ['Alice', 'Mike', ''],
+          [{v:'110', f:'人事'}, '100', 'Bob Sponge'],
+          ['Carol', 'Bob', '']
+        ]);
+
+        var chart = new google.visualization.OrgChart(document.getElementById('chart_div'));
+        chart.draw(data, {allowHtml:true});
+      }
+   </script>
+    </head>
+  <body>
+    <div id="chart_div""></div>
+  </body>
+</html>

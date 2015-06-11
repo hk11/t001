@@ -1,0 +1,23 @@
+<script src="https://www.google.com/jsapi"></script>
+<script>
+google.load('visualization', '1', {packages:['geochart']});
+google.setOnLoadCallback(graphChart);
+
+function graphChart() {
+  var data = google.visualization.arrayToDataTable([
+    ["都道府県", "データ"], 
+    ["北海道", 20], 
+    ["青森", 3]
+  ]);
+
+  var option = {
+    region: 'JP',
+    resolution: 'provinces'
+  };
+
+  var chart = new google.visualization.GeoChart(document.getElementById('chart'));
+  chart.draw(data, option);
+}
+</script>
+
+<div id="chart"></div>

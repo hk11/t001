@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!-- HTML5 Hello world by kirupa - http://www.kirupa.com/html5/getting_your_feet_wet_html5_pg1.htm -->
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Dev Section</title>
+</head>
+<body>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+google.load("visualization", "1", {packages:["corechart"]});
+google.setOnLoadCallback(
+    function() {
+        var data = google.visualization.arrayToDataTable([
+            [       '', '2015/03/12', '2015/05/05'],
+            ['利用者関連マスタ',1769472000,1935409152,],
+            ['業務WF',     26239827968,        41077702656],
+            ['名刺保管',     1940389888,2167406592]
+        ]);
+
+        var options = {
+            title: '案件実績',
+            hAxis: {title: '県別'},
+            width: 900,
+          legend: { position: 'none' }
+        };
+
+        var chart = new google.visualization.BarChart(document.getElementById('gct_sample_column'));
+        chart.draw(data, options);
+    }
+);
+</script>
+<div id="gct_sample_column" style="width:900px; height:900px" ></div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!-- HTML5 Hello world by kirupa - http://www.kirupa.com/html5/getting_your_feet_wet_html5_pg1.htm -->
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+<title>Dev Section</title>
+</head>
+<body>
+<input type="hidden" id="jsfd" name="price" value="['', 'ヘルプ派遣(分)','ヘルプ受け入れ（分）']#['ＤＳ',2040,0]#['E大宮',7110,0]" />
+<div id="gct_sample_column" style="width:1200px; height:2000px" ></div>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+google.load("jquery",1);
+google.load("visualization", "1", {packages:["corechart"]});
+google.setOnLoadCallback(
+    function() {
+        var tmpjson=$('#jsfd').val();
+        //alert(tmpjson);
+        //var ab=[['EEE', '介護','介護夜勤','計画作成','看護'],['ＤＳ',3,12,2,23],['E大宮',9,10,0,23]];
+        
+        
+                        //'介護','看護',    '調理',    '事務','計画作成','管理','介護(夜勤)','理学療法・歯科','看護(夜勤)'
+        
+        var ab=[['EEE', '介護','看護','調理','事務','計画作成','管理','介護(夜勤)','理学療法・歯科','看護(夜勤)']
+        ,['ＤＳ',3,12,0,0,0,0,0,23,2],['E大宮',3,12,2,23,23,23,23,23,2]];
+        
+        //<v></v>ar ab=[['EEE','介護','看護','調理','事務','計画作成','管理','介護(夜勤)','理学療法歯科','看護(夜勤)'],['ＤＳ',2,,,,,,,,0],['E大宮',2,,,,,,,,0]];
+        
+        //var obj = tmpjson.split("#");
+        //alert(ab);
+        //var obj = $.parseJSON('{"name":"John"}');
+        var data = google.visualization.arrayToDataTable(ab);
+        var options = {
+            title: 'Help Diff',
+            isStacked: true,
+        chartArea:{left:300,top:100,width:'50%'},
+        height: 500,
+        hAxis: {
+          title: '分',
+          minValue: 0
+        },
+        vAxis: {
+          title: '施設名'
+        }
+};
+
+        var chart = new google.visualization.BarChart(document.getElementById('gct_sample_column'));
+        chart.draw(data, options);
+    }
+);
+</script>
+</body>
+</html>

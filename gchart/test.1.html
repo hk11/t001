@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!-- HTML5 Hello world by kirupa - http://www.kirupa.com/html5/getting_your_feet_wet_html5_pg1.htm -->
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+<title>Dev Section</title>
+</head>
+<body>
+<input type="hidden" id="jsfd" name="price" value="['', 'ヘルプ派遣(分)','ヘルプ受け入れ（分）'],['ＤＳ',2040,0],['E大宮',7110,0]" />
+<div id="gct_sample_column" style="width:1200px; height:2000px" ></div>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+google.load("jquery",1);
+google.load("visualization", "1", {packages:["corechart"]});
+google.setOnLoadCallback(
+    function() {
+        var data = new google.visualization.DataTable();
+data.addColumn('string', 'Department');
+data.addColumn('number', 'Revenues');
+data.addRows([
+  ['Shoes', 10700],
+  ['Sports', -15400],
+  ['Toys', 12500],
+  ['Electronics', -2100],
+  ['Food', 22600],
+  ['Art', 1100]
+]);
+
+var table = new google.visualization.Table(document.getElementById('gct_sample_column'));
+
+var formatter = new google.visualization.BarFormat({width: 120});
+formatter.format(data, 1); // Apply formatter to second column
+
+table.draw(data, {allowHtml: true, showRowNumber: true});
+
+    }
+);
+</script>
+</body>
+</html>

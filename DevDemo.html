@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8" />
+   <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>impress.js | presentation tool based on the power of CSS3 transforms and transitions in modern browsers | by Bartek Szopka @bartaz</title>
+    
+    <meta name="description" content="impress.js is a presentation tool based on the power of CSS3 transforms and transitions in modern browsers and inspired by the idea behind prezi.com." />
+    <meta name="author" content="Bartek Szopka" />
+
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
+    <link href="css/impress-demo.css" rel="stylesheet" />
+    <link href="css/demoex.css" rel="stylesheet" />
+    
+    <link rel="shortcut icon" href="favicon.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+</head>
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+<div id="impress">
+      <div id="cone" class="step slide" data-x="-4000" data-y="-3500" data-rotate="180" data-rotate-x="90" data-z="-2000" data-scale="1">
+        <q>開発企画PJ<br/><b class="hl">顧客DBと開発進捗DBについて</b></q>
+        <span class="footnote"><sup>*</sup> SFA trial version</span>
+    </div>
+    <div id="bored" class="step slide" data-x="-1000" data-y="-1500">
+        <q2>このプロジェクトは下記DBにより構成されています<br/></q2>
+        <br/>
+        <b>顧客DB</b><br/>
+        <ul class="voeux">
+            <li class="item item-1"><sup>*</sup>「法人」「人」の情報を登録します</li>
+            <li class="item item-2"><sup>*</sup>「開発進捗DB」のデータ元となります</span></li>
+            <li class="item item-3"><sup>*</sup>「郵便番号検索」「QR発番」「共通タグ」があります</span></li>
+        </ul>
+        <br/>
+       <b>開発進捗DB</b><br/>
+        <ul class="voeux">
+            <li class="item item-1"><sup>*</sup>ステータス管理出来ます</li>
+            <li class="item item-2"><sup>*</sup>エリア単位のフローがあります</span></li>
+            <li class="item item-3"><sup>*</sup>etc</span></li>
+        </ul>
+    </div>
+    <div class="step slide" data-x="0" data-y="-1500" data-rotate-y="90"">
+        <q>顧客DBについて</q>
+        <ul class="voeux">
+        <li class="item item-1">
+            <a href="Notes://MCSNOTES03/49257D940024B12A/">Click</a>
+        </li>
+            <li class="item item-2><sup>*</sup></li>
+            <li class="item item-3><sup>*</sup>エリア単位のフローがあります</span></li>
+        </ul>
+    </div>
+ <div id="tiny" class="step" data-x="2825" data-y="2325" data-z="-3000" data-rotate="300" data-scale="1">
+        <h1>ですが</h1>
+    </div>
+
+
+    <div class="step slide" data-x="1000" data-y="-1500">
+        <q>Would you like to <strong>impress your audience</strong> with <strong>stunning visualization</strong> of your talk?</q>
+    </div>
+    <div id="title" class="step" data-x="0" data-y="0" data-scale="4">
+        <span class="try">then you should try</span>
+        <h1>impress.js<sup>*</sup></h1>
+        <span class="footnote"><sup>*</sup> no rhyme intended</span>
+    </div>
+    
+    
+    
+        <div id="overview" class="step" data-x="3000" data-y="1500" data-scale="10">
+    </div>
+
+</div>
+<div class="hint">
+    <p>左右でMove</p>
+</div>
+<script>
+if ("ontouchstart" in document.documentElement) { 
+    document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
+}
+</script>
+<script src="js/impress.js"></script>
+<script>impress().init();</script>
+</body>
+</html>

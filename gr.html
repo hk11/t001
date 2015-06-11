@@ -1,0 +1,59 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1.1", {packages:["bar"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['都道府県', '全件', '開所前案件', '開所案件'],
+          ['北海道', 10, 3, 7],
+          ['北海道', 18, 10, 8],
+          ['北海道', 10, 3, 7],
+          ['北海道', 10, 3, 7],
+          ['北海道', 10, 3, 7],
+          ['北海道', 10, 3, 7],
+          ['北海道', 10, 3, 7],
+          ['北海道', 10, 3, 7],
+          ['北海道', 10, 3, 7],
+          ['北海道', 10, 3, 7],
+          ['北海道', 10, 3, 7],
+          ['北海道', 10, 3, 7],
+          ['北海道', 10, 3, 7],
+          ['北海道', 10, 3, 7],
+          ['北海道', 10, 3, 7],
+          ['北海道', 10, 3, 7],
+          ['北海道', 10, 3, 7],
+          ['北海道', 10, 3, 7],
+          ['北海道', 10, 3, 7],
+          ['北海道', 10, 3, 7],
+          ['北海道', 10, 3, 7],
+          ['北海道', 10, 3, 7],
+          ['北海道', 10, 3, 7],
+          ['北海道', 10, 3, 7],
+          ['北海道', 10, 3, 7],
+          ['北海道', 10, 3, 7],
+          ['北海道', 10, 3, 7],
+          ['北海道', 10, 3, 7],
+          ['北海道', 10, 3, 7],
+          ['沖縄', 3, 3, 0]
+        ]);
+
+        var options = {
+          chart: {
+            title: '案件情報',
+            subtitle: 'Development Section',
+          },
+          bars: 'horizontal' // Required for Material Bar Charts.
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('barchart_material'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="barchart_material" style="width: 900px; height: 1400px;"></div>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+<HTML>
+<HEAD>
+<TITLE>HISOAP - Web Technique [ chtmlト ]</TITLE>
+<STYLE type=text/css>
+<!--
+BODY,TD,TH,B {font-size:10pt; font-family:arial,sans-serif;}
+A:link,A:visited,A:active {font-size:10pt; text-decoration:none; color:#0000FF;}
+A:hover                   {font-size:10pt; text-decoration:underline; color:#FF0000;}
+.select {width:100%; max-width:280px; min-width:280px;}
+-->
+</STYLE>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+function closePage(){ window.close(); }
+function reLoad(){ location.reload(true); }
+function updateParent(textField) {
+    if(textField.value == ""){
+    }else{
+        //opener.document.Form1.content.value = textField.value;
+        alert(opener);
+        opener.document.forms[0].content.value = textField.value;
+    }
+}
+//-->
+</SCRIPT>
+</HEAD>
+
+<BODY BGCOLOR=#FFFFFF TOPMARGIN=0 LEFTMARGIN=0 MARGINWIDTH=0 MARGINHEIGHT=0>
+<SCRIPT LANGUAGE="JavaScript">focus();</SCRIPT>
+
+<TABLE WIDTH="100%" CELLPADDING=3 CELLSPACING=0 BORDER=0>
+<TR><TD>[ <A HREF="JavaScript:closePage('');">Close</A>
+        | <A HREF="JavaScript:reLoad('');">Reload</A> ]</TD></TR>
+<FORM NAME=EditForm>
+<TR><TD>
+<SELECT SIZE=12 NAME="content" OnChange="javascript:updateParent(this)" CLASS="select">
+<OPTION VALUE="パソコン教室">パソコン教室
+<OPTION VALUE="ノーツ講習会">ノーツ講習会
+<OPTION VALUE="社内セキュリティ講習会">社内セキュリティ講習会
+<OPTION VALUE="商品開発会議">商品開発会議
+<OPTION VALUE="情報化管理委員会">情報化管理委員会
+<OPTION VALUE="セキュリティ・ソリューションフォーラム">セキュリティ・ソリューションフォーラム
+</SELECT>
+</TD></TR>
+</FORM>
+</TABLE>
+
+<SCRIPT LANGUAGE="JavaScript">document.EditForm.content.focus();</SCRIPT>
+
+</BODY>
+</HTML>
